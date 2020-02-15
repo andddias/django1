@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Django 1 - Produto</title>
+</head>
+<body>
+    <h1>Produto</h1>
+
+    <!--Apresentando produto em uma tabela-->
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!--Colocando uma rota para voltar para index.html-->
+                <td><a href="{% url 'index' %}">{{ produto.nome }}</a></td>
+                <td>{{ produto.preco }}</td>
+                <td>{{ produto.estoque }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

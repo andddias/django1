@@ -7,16 +7,37 @@
 <body>
     <h1>Index</h1>
 
-    <!-- Acessando dicionario context criado na views.py -->
+    <!--Acessando dicionario context criado na views.py-->
     <h2>{{ curso }}</h2>
 
     <p>{{ outro }}</p>
 
     <span>{{ logado }}</span>
 
+
+    <!--Apresentando produtos em paragrafos-->
     {% for produto in produtos %}
         <p>{{ produto }}</p>
     {% endfor %}
+
+    <!--Apresentando produtos em uma tabela-->
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+            <tr>
+                <!--Colocando uma rota para produto.htlm passando como parametro seu id-->
+                <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+                <td>{{ produto.preco }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 </body>
 </html>
