@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from .models import Produto
 
 def index(request):
     # Usando informações do Django Shell
@@ -12,10 +13,14 @@ def index(request):
     else:
         teste = 'Usuário logado'
 
+    # Obtendo produtos cadastrados no bando de dados
+    produtos = Produto.objects.all()
+
     context = {
         'curso': 'Programação Web com Django Framework',
         'outro': 'Django é massa!',
         'logado': teste,
+        'produtos': produtos,
     }
     return render(request, 'index.html', context)
 
