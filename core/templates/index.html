@@ -1,11 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Djando 1 - Index</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
     <h1>Index</h1>
+
+    <img alt="Logo Django" src="{% static 'images/django.png' %}">
 
     <!--Acessando dicionario context criado na views.py-->
     <h2>{{ curso }}</h2>
@@ -39,5 +43,7 @@
         </tbody>
     </table>
 
+    <button onclick="teste()">Clique-me</button>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
