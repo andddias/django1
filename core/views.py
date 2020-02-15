@@ -7,10 +7,6 @@ from .models import Produto
 
 
 def index(request):
-    # Usando informações do Django Shell
-    print(dir(request.user))
-    print(f"User: {request.user}")
-
     # Logica para saber se usuario está logado
     if str(request.user) == 'AnonymousUser':
         teste = 'Usuário não logado'
